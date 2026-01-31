@@ -29,9 +29,9 @@ jobs:
             --client-id ${{ secrets.SF_CLIENT_ID }} \
             --jwt-key-file server.key \
             --username ${{ secrets.SF_USERNAME }} \
-            --instance-url https://login.salesforce.com \
+            --instance-url https://test.salesforce.com \
             --set-default \
-            --alias target-org
+            --alias dev
 
       # 4️⃣ Validate Deployment (Check Only)
       - name: Validate Deployment
