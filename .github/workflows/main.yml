@@ -9,6 +9,7 @@ on:
 jobs:
   salesforce-deploy:
     runs-on: ubuntu-latest
+    environment: dev   # ✅ REQUIRED if using Environment secrets
 
     steps:
       # 1️⃣ Checkout Repository
@@ -38,7 +39,7 @@ jobs:
         run: |
           sf project deploy validate \
             --source-dir force-app \
-            --target-org target-org \
+            --target-org dev \
             --test-level RunLocalTests \
             --wait 30
 
@@ -47,6 +48,6 @@ jobs:
         run: |
           sf project deploy start \
             --source-dir force-app \
-            --target-org target-org \
+            --target-org dev \
             --test-level RunLocalTests \
             --wait 30
